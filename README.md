@@ -1,3 +1,3 @@
-# Simple Starter
+# gen-18
 
-Simple JS build starter for simple, client-only demos.
+Arcs connected to arcs connected to arcs..
