@@ -29,7 +29,7 @@ function randomRadius(radiusPower)
 {
     const { width, height } = config
 
-    const size = Math.min(width, height)/28;
+    const size = Math.min(width, height) * 0.02;
     const rnd = Math.random();
     return size * 0.2 + Math.pow(rnd, radiusPower) * size * 0.8
 
@@ -134,7 +134,7 @@ class Path {
         ctx.strokeStyle = color
         ctx.beginPath();
         ctx.arc( x, y, r, startAngle, endAngle, !clockwise )
-        ctx.fill();
+        ctx.stroke();
 
         startAngle = wrap(endAngle - TAU/2 );
         x += Math.cos(endAngle) * r
@@ -191,17 +191,17 @@ domready(
             ctx.strokeStyle = "#fff"
             const p = new Path()
 
-            const count = (500 + Math.random() * 300)|0
+            const count = 10000
 
             for (let i = 0; i < count; i++)
             {
                 p.draw()
             }
 
-            while (!p.reset)
-            {
-                p.draw();
-            }
+            // while (!p.reset)
+            // {
+            //     p.draw();
+            // }
         };
 
 
